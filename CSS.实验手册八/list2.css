@@ -1,0 +1,63 @@
+<style type="text/css">
+body{
+	font：12px Arial gray;
+	line-height: 2em;
+}
+table.no1{
+	background-image: url(../实验6图片/bg.gif);
+	weight:100%;
+}
+td.no2{
+	background-image: url(../实验6图片/banner.jpg); 
+}
+a:link{
+	text-decoration: none;color:#727272;
+}
+a:visited{
+	text-decoration: none;color:#727272;
+}
+a:hover{
+	text-decoration: underline;color:#727272;
+}
+a:active{
+	text-decoration: none;color:#727272;
+}
+.t a{
+	font-weight:900;font-size:14px;color:white;text-decoration: none;
+}
+.t a:hover{
+	color:#b9f605;text-decoration: none;font-weight:900;font-size:14px;
+}
+.t a:last-child{
+	font-weight:900;font-size:14px;color:#fdb306;text-decoration: none;
+}
+#th{
+	font-weight:900;font-size:14px;color:#b9f605;
+}
+ul{
+	list-style-type: none;
+}
+ul.no2{
+			list-style-image:url(../实验6图片/pot.gif);
+		}
+.b a:hover{
+		color:#b9f605;text-decoration: none;
+}
+.b a{
+	font-size: 14px;
+}
+ul.no3{
+			background-image: url(../实验6图片/menulist.gif);
+			background-repeat:repeat-y;
+		}
+</style>
+
+
+
+
+
+
+
+
+
+
