@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图片自动滚动</title>
+	<meta charset="utf-8"  content="text/html; charset=gb2312" />
+	<style type="text/css">
+		#picScroll{
+			white-space:nowrap;
+			overflow:hidden;
+			width:600px;	
+		}
+		img{
+			height: 300px;
+		}
+		#picScroll1{
+			float:left;
+		}
+		#picScroll2{
+			float:left;
+		}
+	</style>
+	
+</head>
+<body>
+	<div id="picScroll">
+		<span id="picScroll1">
+			<img src="images2/1.jpg"/>
+			<img src="images2/2.jpg"/>
+			<img src="images2/3.jpg"/>
+			<img src="images2/4.jpg"/>
+			<img src="images2/5.jpg"/>
+			<img src="images2/6.jpg"/>
+			<img src="images2/7.jpg"/>
+			<img src="images2/8.jpg"/>
+		</span>
+		<span id="picScroll2"></span>
+	</div>
+<script>
+	var speed=10;
+	var tab=document.getElementById("picScroll");
+	var tab1=document.getElementById("picScroll1");
+	var tab2=document.getElementById("picScroll2");
+	tab2.innerHTML=tab1.innerHTML
+	function changeToLeft(){
+		if(tab2.offsetWidth-tab.scrollLeft<=0){
+			tab.scrollLeft-=tab1.offsetWidth
+		}
+		else{
+			tab.scrollLeft++;
+		}
+	}
+	var MyMar=setInterval(changeToLeft,speed);
+	tab.onmouseover=function(){
+		clearInterval(MyMar)
+	};
+	tab.onmouseout=function(){
+		MyMar=setInterval(changeToLeft,seep)
+	};
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
