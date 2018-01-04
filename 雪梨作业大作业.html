@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>大作业</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="content3.css"/>
+   
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js "></script>
+
+<!--     导航条下拉菜单效果-->
+<script type="text/javascript">
+$(document).ready(function(){
+    jQuery.navlevel2 = function(level1,dytime) {  
+      $(level1).mouseenter(function(){
+          varthis = $(this);
+          delytime=setTimeout(function(){
+            varthis.find('ul').slideDown();
+        },dytime); 
+      });
+      $(level1).mouseleave(function(){
+         clearTimeout(delytime);
+         $(this).find('ul').slideUp();
+      });  
+    };
+  $.navlevel2("li.mainlevel",300);
+});
+</script>
+
+
+<!-- 幻灯片效果 -->
+<script type="text/javascript">
+$("#slideshow > div:gt(0)").hide();
+setInterval(function() {
+ $('#slideshow > div:first')
+  .fadeOut(1000)
+  .next()
+  .fadeIn(1000)
+  .end()
+  .appendTo('#slideshow');
+}, 3000);
+</script>
+
+</head>
+<body style="background-position: 0px 0px; background: url('11.jpg'); background-repeat: repeat; background-attachment: scroll;"> 
+	<div id="bigger">
+	<!-- 导航条效果下拉菜单 -->
+	<div>
+    <table cellpadding="0" cellspacing="0" bgcolor="yellow">
+	<tr>
+		<td width="300">&nbsp;</td>
+		<td width="50" valign="top">&nbsp;<br/>&nbsp;
+			<a href="#" id="th">首页</a>
+		<td width="120">
+			<ul id="nav">
+				<li class="mainlevel"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;去哪玩</a>
+				<ul>
+					<li><a href="#">北京</a></li>
+            		<li><a href="#">天津</a></li>
+            		<li><a href="#">上海</a></li>
+				</ul>
+			</li>
+		</ul>
+	</td>
+</td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">酒店</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td><a href="#" class="a1">美食</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td><a href="#">风景</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td><a href="#">照片</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td><a href="#">路线</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<!-- 表单操作 -->
+		<td><a href="zhuceye.html">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td width="280">&nbsp;</td>
+	</tr>	
+</table>
+</div>
+<!-- 联动效果 -->
+<div>
+<form name="F1">
+<select name="select1" onChange="set_list(this.options.selectedIndex)">
+<option selected>北京</option>
+<option>天津</option>
+<option>上海</option>
+</select>
+<select name="select2" >  
+<option selected>旅游去处</option> 
+</select>
+ 
+<script language="JavaScript"> 
+var l=document.F1.select1.options.length;
+var group=new Array(l)
+for (i=0; i<l; i++)
+group[i]=new Array() 
+
+group[0][0]=new Option("王府井","#") 
+group[0][1]=new Option("天安门","#") 
+group[0][2]=new Option("海洋馆","#") 
+ 
+group[1][0]=new Option("天津之眼","/jscss") 
+group[1][1]=new Option("意式风情街","#") 
+ 
+group[2][0]=new Option("欢乐谷","#") 
+group[2][1]=new Option("外滩 ","#") 
+group[2][2]=new Option("豫园","#") 
+ 
+var selobj=document.F1.select2;  
+function set_list(x) 
+{ 
+for (m=selobj.options.length-1;m>0;m--) 
+selobj.options[m]=null 
+for (i=0;i<group[x].length;i++){
+selobj.options[i]=group[x][i]
+} 
+selobj.options[0].selected=true
+} 
+function go(){
+location=selobj.options[selobj.selectedIndex].value
+} 
+</script> 
+ 
+</form> 
+<p><input type="button" name="Button" value="go" onclick="go()" style="background-color: #FFFFFF; float: left; font-family: Arial Black; font-size: 10pt; font-weight: bold; text-decoration: blink; color: #000000; font-style: italic; border-style: solid; border-width: 1"></p>
+<p>　</p>
+</div>
+	
+<!-- 幻灯片效果-->
+<div id="slideshow">
+  <div>
+   <img src="1.jpg">
+  </div>
+  <div>
+   <img src="2.jpg">
+  </div>
+  <div>
+  	<img src="3.jpg">
+  </div>
+  <div>
+   海底世界
+  </div>
+</div>
+</div>
+
+</body>
+</html>
